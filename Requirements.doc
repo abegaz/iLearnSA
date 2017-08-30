@@ -1,8 +1,9 @@
 Functional Requirements:
-1. 1.	Only accessible by students, parents of those students and professors by using either passwords or student/faculty IDs
+1.	Only accessible by students, parents of those students and professors by using either passwords or student/faculty IDs
 2.	Security Requirement: Students and parents are not allowed to have access to grades to change them, only professors. 
-3.	
-4.	
+3.	To set up applications to prepare or teach students about a certain class or topic in which they or their parents choose.
+4.	To set up a grading system that is used for submissions from students as well as assessment of how well they are doing with
+    the topic.
 5.	
 7.	
 8.	
