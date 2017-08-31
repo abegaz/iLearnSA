@@ -17,13 +17,13 @@ Functional Requirements:
 15.
 16.
 17.
-18.	
-19.	
+18. Tutorial function for both professors and students
+19. Function where professors can view the app from the perspective of one of their students
 
 
 Non-Functional Requirements:
 1.Written in JavaFX in Java language. 
-2.	
+2. Back-up: Return and restore data to its previous state due to cyber attacks or implementation failure.
 3.	
 4.	
 5.	
