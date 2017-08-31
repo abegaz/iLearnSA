@@ -23,8 +23,8 @@ Functional Requirements:
 
 Non-Functional Requirements:
 1.Written in JavaFX in Java language. 
-2.	
-3.	
+2.Back-up: Return and restore data to its previous state due to cyber attacks or implementation failure.
+3.Time constraint: User loggin must finish within a reasonable amount of time.
 4.	
 5.	
 6.	
