@@ -6,9 +6,9 @@ Functional Requirements:
     the topic.
 5.	Add attendance system for teachers to track when students are present
 6.  Allow students to send direct messages to other students for help, While teachers may have access to in order to monitor messages
-7.	
-8.	
-9.
+7.	Application for students to take quizzes and tests online that are graded instantly.
+8.	An application for students to easily sign up and register for classes. 
+9. A system application that lets students register for tutoring services offered on campus. 
 10.
 11.	 
 12.
@@ -17,13 +17,13 @@ Functional Requirements:
 15.
 16.
 17.
-18. Tutorial function for both professors and students
-19. Function where professors can view the app from the perspective of one of their students
+18.	
+19.	
 
 
 Non-Functional Requirements:
 1.Written in JavaFX in Java language. 
-2. Back-up: Return and restore data to its previous state due to cyber attacks or implementation failure.
+2.	
 3.	
 4.	
 5.	
