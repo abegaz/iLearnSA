@@ -13,12 +13,12 @@ Functional Requirements:
 11.	Tutorial function for both professors and students
 12. Application to contact the IT department and run diagnostic issues with iLearn.
 13. An application that lets teachers set up appointment times for students to reserve for tutoring.
-14.
-15.
-16.
-17.
-18.	
-19.	
+14. A Media service that allows students to have access to, watch educational content that professors add
+15. discussion application that allows students to have discussions as well as share attachments with classmates and professors
+16. Database of all students and proefessors that access to Ilearn.
+17. Library application that provides students with resources and links
+18.	Calendar application that is updated with work that is due from their classes, as well as available for the student to edit in their own schedules
+
 
 
 Non-Functional Requirements:
@@ -29,5 +29,5 @@ Non-Functional Requirements:
 5.	Data safety: Protect the privacy of users' personal information, ID, password, and other important documentation
 6.	Customer Service/ Online help
 7.	Report when a system is compromised
-8.	
+
 
