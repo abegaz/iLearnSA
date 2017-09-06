@@ -1,16 +1,27 @@
-As a student, I need to access ILearn's data to check on my grades by using my password or my ID
+Functional requirement stories
+
+As a student, I need to access ILearn's data to check on my grades by using my password and my ID
 As a professor, I need to access ILearn to change and update grades using my password/ID
 As a professor, I want to make sure that students cannot access the grades
 As a student I want to have access to media content that is uploaded by professors
 As a professor I want to have a tool to upload educational media content for students to view
-As a student I want a easily accessable disccussion tool to communicate with professors and students
+As a student I want an easily accessable disccussion tool to communicate with professors and other students
 A Professor should have access to their students information in the database
 Only a professor should have the access to all of the students information from the database
-student should have easily acceassable email service 
-Professors should have same easily acceassable email service
-As a student, I want an easy way to submit work to my professors
+Students should have an easily acceassable email service 
+Professors should also have the same easily acceassable email service
+As a student, I want an easy way to submit work to my professors and an easy way to see when work is due
 As a Student, I want confirmation that my work was submitted
 As a student, I want to easily access tutoring information, and be able to schedule tutoring sessions.
 As a student, we should be able to schedule classes and plan out our schedules easily.
 As a professor, students should be able to instantly see their scores after finishing their assignments online.
-As a professor and student, they need to be able to access an virtual library system in iLearn.
+As a professor and student, we need to be able to access an virtual library system in iLearn.
+As a professor and student, if we dont understand something on the page, an it service should be available
+
+Non-functional requirement stories
+
+As a client, I want the program to be writen in javaFX
+As a client,I want a back-up database in case somthing goes wrong
+As a client, I dont want my clients to have to wait more than 15 seconds to be logged in
+
+
