@@ -17,6 +17,11 @@ As a student, we should be able to schedule classes and plan out our schedules e
 As a professor, students should be able to instantly see their scores after finishing their assignments online.
 As a professor and student, we need to be able to access an virtual library system in iLearn.
 As a professor and student, if we dont understand something on the page, an it service should be available
+As a student, I want to choose a class or topic so that I can increase my ability on the topic. (edit possibly, wording is off at the end)
+As a parent, I want to choose a class or topic such that my child/children can increase their proficiency int hat topic.
+As a student, I want to submit work for assessment so I can see how well I am learning the topic.
+As a student, I want to check my grades in a class so I can see how well I am learning the topic.
+As a professor, I want to submit a grade for a student's assessment so he/she can see how well they are doing.
 
 Non-functional requirement stories
 
