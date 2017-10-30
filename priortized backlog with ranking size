@@ -1,0 +1,18 @@
+Functional requirement stories
+size      backlog
+L         1)As a user, I need to be able to be able to create a unique username and password to login
+L         2)As a user, I need 2 security questions that need to be answered when I create my account so that
+            if I forget my password there are extra security measures
+S         3)As a user, I want the pages to look good and be easy to use so that I want to get on it and learn
+S         4)As a user, I need there to be tutorials so that I have something to read and learn from about java
+S         5)As a user, I need there to be enough information on the java programming language so that when I finish I have at least a basic
+            understanding of how to program with java
+L         6)As a user, I want my the last page I was on to be automatically bookmarked so that when I log in I can have a link that takes me directly
+            to the page I left off on
+XL        7)As a user, I need my email to be part of my account information in case I forget my password that way I can have a temporary password sent
+            to me so that I can reset my pasword
+M         7)As a user, I want there to be a quiz for each new thing I learn about the java programming language so that I am able to see if I 
+            have efficently learned it or if I need to go back and reread it
+L         9)As a user, I need there to be examples of java problems so that I have materials that I can practice and learn from
+L         10)As a user, I want to be able to interact with the java examples and try to put my own code in there along with the prepopulated
+            java code that is the examle
