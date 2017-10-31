@@ -1,0 +1,42 @@
+Architectural Design
+
+1.	Login page
+  a.	Input Textboxes
+      i.	User Username
+      ii.	Password
+  b.	Button
+      i.	Login
+  c.	Connected (hyper)links
+      i.	Signup
+          1.	Allow users to create accounts 
+          2.	Go to signup page 
+    ii.	Forgot password
+          1.	If user forget the password, he/she should be able to reset the password. 
+          2.	Go to password page 
+2.	Signup page
+  a.	Textboxes
+    i.	User Name
+          1.	User Input
+    ii.	Birthday
+          1.	Month, day, year 
+    iii.	Account
+          1.	Connect to DB to see if the account is already used by someone else 
+    iv.	Password & confirm password 
+          1.	Test the password strength
+    v.	Email 
+          1.	Connect to DB to see if the email is already registered by someone else
+  b.	Button
+    i.	Submit
+          1.	Check if all the required information is filled. 
+              a.	If yes, submit the application to the database and send the verification email to user 
+              b.	If not, show the alert message on screen and tell user which information have not been filled yet
+    ii.	Reset 
+          1.	Clear all information 
+3.	Home page 
+  a.	Functions 
+     i.	Show Menu for different lessons of Java
+    ii.	Main Box
+        1.	Read general overview of what Java is
+    iii.	Practice Problems/Quiz
+        1.	Upload questions of Practice Problems/ Quiz 
+        2.	Upload answers to check Users’ answers
