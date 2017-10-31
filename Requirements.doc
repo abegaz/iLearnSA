@@ -1,25 +1,16 @@
 Functional Requirements:
-1.	Only accessible by students, parents of those students and professors by using either passwords or student/faculty IDs
-2.	Security Requirement: Students and parents are not allowed to have access to grades to change them, only professors. 
-3.	To set up applications to prepare or teach students about a certain class or topic in which they or their parents choose.
-4.	To set up a grading system that is used for submissions from students as well as assessment of how well they are doing with
-    the topic.
-5.	Add attendance system for teachers to track when students are present
-6.  Allow students to send direct messages to other students for help, While teachers may have access to in order to monitor messages
-7.	Application for students to take quizzes and tests online that are graded instantly.
-8.	An application for students to easily sign up and register for classes. 
-9. A system application that lets students register for tutoring services offered on campus. 
-10. A function that allows the teachers/admin to view the software from the students poit of view
-11.	Tutorial function for both professors and students
-12. Application to contact the IT department and run diagnostic issues with iLearn.
-13. An application that lets teachers set up appointment times for students to reserve for tutoring.
-14. A Media service that allows students to have access to, watch educational content that professors add
-15. discussion application that allows students to have discussions as well as share attachments with classmates and professors
-16. Database of all students and proefessors that access to Ilearn.
-17. Library application that provides students with resources and links
-18.	Calendar application that is updated with work that is due from their classes, as well as available for the student to edit in their own schedules
-
-
+1.	Aaccessible by anyone  by using usename and password
+2.	Username, Passowrd, Confirm Pasword, email and Security questions are required when creating an account
+3.	To set up applications to teach users java
+4.	Application for users to take quizzes online after a lesson that are graded instantly.
+5.	A system application that lets users register for tutoring services 
+6.  Tutorial function for users
+7.	 Application to contact the IT department and run diagnostic issues with iLearn.
+8.	A Media service that allows users to have access to, watch educational content on Java
+9.   Database table of users that access to Ilearn.
+10. Database table of security questions that access to Ilearn.
+11.	Database table of quiz questions that access to Ilearn.
+12.Library application that provides students with resources and links
 
 Non-Functional Requirements:
 1.Written in JavaFX in Java language. 
