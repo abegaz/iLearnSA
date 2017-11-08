@@ -20,12 +20,13 @@ public class loginViewController {
 	public void loginBtnClicked() throws SQLException {
 		connection = iLearnDBConfig.getConnection();
 		String userName = userNameField.getText();
-		if (!(userName.length() > 0))	
-			System.out.println("userName Field Required");
-		else
+//		if (!(userName.length() > 0))	
+//			System.out.println("userName Field Required");
+//		else
 			try {
 				// try type username with "chwong4703" in userName textField
-				String sql_query = "SELECT * FROM USER WHERE Username = '" + userName + "'"; 
+				//String sql_query = "SELECT * FROM USER WHERE Username = '" + userName + "'"; 
+				String sql_query = "SELECT * FROM USER"; 
 				// create the java statement
 				Statement st = connection.createStatement();
 			    // execute the query, and get a java resultset
@@ -33,9 +34,14 @@ public class loginViewController {
 			    // iterate through the java resultset
 			      while (rs.next())
 			      {
+			    	int id = rs.getInt("id");
 			        String firstName = rs.getString("FirstName");
 			        String lastName = rs.getString("LastName");
-			        System.out.println("First Name: " + firstName + "\tLastName: " + lastName);
+			        String email = rs.getString("Email");
+			        String username = rs.getString("Username");
+			        String password = rs.getString("Password");
+			        System.out.println("First Name: " + firstName + "\tLastName: " + lastName + 
+			        					"\tEmail: " + email + "\tUsername: " + username + "\tpassword: " + password);
 			      }
 			      st.close();
 			    }
