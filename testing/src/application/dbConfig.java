@@ -9,7 +9,7 @@ public class dbConfig {
 		Connection conn = getConnection();
 
 		 Statement stmt = null;
-		 String query = "select firstName,lastName from people";
+		 String query = "select firstName,lastName from USER = chowng4703";
 		 try {
 			stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
@@ -27,7 +27,7 @@ public class dbConfig {
 	public static Connection getConnection(){
 		Connection conn = null;
 	    try {
-			conn = DriverManager.getConnection("jdbc:mysql://50.62.209.113:3306/chwong4703_db","chwong4703","940504");
+			conn = DriverManager.getConnection("jdbc:mysql://50.62.209.113:3306/iLearnSA","iLearnAdmin","123456789");
 			 System.out.println("Connected to database");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
