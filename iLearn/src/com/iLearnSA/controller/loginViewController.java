@@ -24,7 +24,8 @@ public class loginViewController {
 			System.out.println("userName Field Required");
 		else
 			try {
-				String sql_query = "SELECT * FROM USER WHERE Username = '" + userName + "'";
+				// try type username with "chwong4703" in userName textField
+				String sql_query = "SELECT * FROM USER WHERE Username = '" + userName + "'"; 
 				// create the java statement
 				Statement st = connection.createStatement();
 			    // execute the query, and get a java resultset
@@ -34,7 +35,7 @@ public class loginViewController {
 			      {
 			        String firstName = rs.getString("FirstName");
 			        String lastName = rs.getString("LastName");
-			        System.out.println("First Name: " + firstName + "LastName: " + lastName);
+			        System.out.println("First Name: " + firstName + "\tLastName: " + lastName);
 			      }
 			      st.close();
 			    }
