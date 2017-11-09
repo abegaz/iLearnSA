@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="464.0" prefWidth="742.0" style="-fx-background-image: url('com/iLearn/images/backgroundImage.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iLearnSA.controller.loginViewController">
+<AnchorPane prefHeight="464.0" prefWidth="742.0" style="-fx-background-image: url('com/iLearn/images/backgroundImage.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iLearnSA.controller.LoginViewController">
    <children>
       <AnchorPane layoutX="442.0" layoutY="74.0" prefHeight="326.0" prefWidth="310.0" style="-fx-background-color: 108DE0;">
          <children>

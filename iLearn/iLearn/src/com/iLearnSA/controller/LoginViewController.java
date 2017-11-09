@@ -18,7 +18,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.PasswordField;
 
-public class loginViewController{
+public class LoginViewController{
 	@FXML private TextField userNameField;
 	@FXML private TextField passwordField;
 	 
@@ -40,7 +40,7 @@ public class loginViewController{
 		else {
 			try {
 				// try type username with "chwong4703" in userName textField
-				String sql_query = "SELECT * FROM USER WHERE Username = '" + usernameInput + "'"; 
+				String sql_query = "SELECT * FROM USERS WHERE Username = '" + usernameInput + "'"; 
 				// create the java statement
 				Statement st = connection.createStatement();
 			    // execute the query, and get a java resultset
@@ -61,7 +61,7 @@ public class loginViewController{
 
 	public void signUpBtnClicked(ActionEvent event) throws IOException {
 //		Parent view = FXMLLoader.load(getClass().getResource("../view/signUpView.fxml"));
-		Parent view = FXMLLoader.load(getClass().getResource("../view/User_creation.fxml"));
+		Parent view = FXMLLoader.load(getClass().getResource("../view/SignUpView.fxml"));
 		Scene scene = new Scene(view);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setScene(scene);
