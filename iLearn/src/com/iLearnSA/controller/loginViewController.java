@@ -60,7 +60,7 @@ public class loginViewController{
 	}
 
 	public void signUpBtnClicked(ActionEvent event) throws IOException {
-		Parent view = FXMLLoader.load(getClass().getResource("../view/signUpView.fxml"));
+		Parent view = FXMLLoader.load(getClass().getResource("../view/testing.fxml"));
 		Scene scene = new Scene(view);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setScene(scene);
