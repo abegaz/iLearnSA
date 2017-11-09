@@ -8,8 +8,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.DropdownButton?>
 
-<AnchorPane style="-fx-background-color: #0292D0;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane  xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane layoutX="700.0" layoutY="400.0" prefHeight="200.0" prefWidth="200.0" />
       <ImageView fitHeight="637.0" fitWidth="1029.0" layoutX="-106.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
@@ -58,38 +59,6 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <DropdownButton layoutX="536.0" layoutY="240.0" prefHeight="27.0" prefWidth="260.0">
-          <items>
-              <MenuItem text="What is your mother's maiden name?" />
-              <MenuItem text="What is the name of your first pet?" />
-              <MenuItem text="What is your high school mascot" />
-            <MenuItem text="What was the name of you elementary school?" />
-            <MenuItem text="What city does your nearest sibling live in?" />
-            <MenuItem text="What is your favorite superhero?" />
-            <MenuItem text="What town was your father born in?" />
-          </items>
-      </DropdownButton>
-      <DropdownButton layoutX="536.0" layoutY="373.0" prefHeight="27.0" prefWidth="260.0">
-         <items>
-            <MenuItem text="What is your mother's maiden name?" />
-            <MenuItem text="What is the name of your first pet?" />
-            <MenuItem text="What is your high school mascot" />
-            <MenuItem text="What was the name of you elementary school?" />
-            <MenuItem text="What city does your nearest sibling live in?" />
-            <MenuItem text="What is your favorite superhero?" />
-            <MenuItem text="What town was your father born in?" />
-         </items>
-      </DropdownButton>
-      <DropdownButton layoutX="536.0" layoutY="71.0" prefHeight="27.0" prefWidth="260.0">
-         <items>
-            <MenuItem text="What is your mother's maiden name?" />
-            <MenuItem text="What is the name of your first pet?" />
-            <MenuItem text="What is your high school mascot" />
-            <MenuItem text="What was the name of you elementary school?" />
-            <MenuItem text="What city does your nearest sibling live in?" />
-            <MenuItem text="What is your favorite superhero?" />
-            <MenuItem text="What town was your father born in?" />
-         </items>
-      </DropdownButton>
+
    </children>
 </AnchorPane>
