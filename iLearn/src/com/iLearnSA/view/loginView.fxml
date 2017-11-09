@@ -29,6 +29,6 @@
          </font>
       </Label>
       <Label layoutX="66.0" layoutY="169.0" prefHeight="62.0" prefWidth="294.0" text="An introduction to learning Java and JavaFX" textFill="#f8f7f7" />
-      <Button fx:id="signupBtn" layoutX="57.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="147.0" text="Sign Up!" />
+      <Button fx:id="signupBtn" layoutX="57.0" layoutY="269.0" mnemonicParsing="false" onAction="#signUpBtnClicked" prefHeight="25.0" prefWidth="147.0" text="Sign Up!" />
    </children>
 </AnchorPane>
