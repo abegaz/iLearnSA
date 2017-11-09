@@ -51,4 +51,8 @@ public class loginViewController {
 			      System.err.println(e.getMessage());
 			    }
 	}
+	public void signupBtnClicked() throws SQLException 
+	{
+		
+	}
 }
