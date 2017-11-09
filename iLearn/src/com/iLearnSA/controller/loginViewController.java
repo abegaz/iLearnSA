@@ -74,4 +74,8 @@ public class loginViewController{
 		window.setScene(scene);
 		window.show();
 	}
+	public void signupBtnClicked() throws SQLException 
+	{
+		
+	}
 }
