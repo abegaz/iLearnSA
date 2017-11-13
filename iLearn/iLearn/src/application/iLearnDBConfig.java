@@ -12,8 +12,8 @@ public class iLearnDBConfig {
 	public static Connection getConnection(){
 		Connection connection = null;
 	    try {
-			System.out.println("Connected to database");
 			connection = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
+			System.out.println("Connected to database");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

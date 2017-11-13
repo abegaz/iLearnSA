@@ -25,9 +25,6 @@ import javafx.scene.control.PasswordField;
 public class LoginViewController{
 	@FXML private TextField userNameField;
 	@FXML private TextField passwordField;
-	@FXML private ChoiceBox<String> securityQuestion1;
-	@FXML private ChoiceBox<String> securityQuestion2;
-	@FXML private ChoiceBox<String> securityQuestion3;
 	private Connection connection;
 	private ResultSet resultSet;
 	
@@ -80,26 +77,6 @@ public class LoginViewController{
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setScene(scene);
 		window.show();
-	}
-	@FXML
-	public void btnQuestionsRefresh(ActionEvent event) throws IOException
-	{
-		ObservableList<String> questions = FXCollections.observableArrayList(buildQuestions());
-		securityQuestion1.setItems(questions);
-		securityQuestion2.setItems(questions);
-		securityQuestion3.setItems(questions);
-	}
-	private ArrayList<String> buildQuestions()
-	{
-		ArrayList<String> questions = new ArrayList<String>();
-		questions.add("What is your mother's maiden name?");
-		questions.add("What is the name of your first pet?");
-		questions.add("What is your high school mascot");
-		questions.add("What was the name of you elementary school?");
-		questions.add("What city does your nearest sibling live in?");
-		questions.add("What is your favorite superhero?");
-		questions.add("What town was your father born in?");
-		return questions;
 	}
 
 }
