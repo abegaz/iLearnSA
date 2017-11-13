@@ -4,8 +4,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import application.iLearnDBConfig;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,12 +19,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 
 public class LoginViewController{
 	@FXML private TextField userNameField;
 	@FXML private TextField passwordField;
-	 
+	@FXML private ChoiceBox securityQuestion1;
+	@FXML private ChoiceBox securityQuestion2;
+	@FXML private ChoiceBox securityQuestion3;
 	private Connection connection;
 	private ResultSet resultSet;
 	
@@ -66,6 +72,10 @@ public class LoginViewController{
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setScene(scene);
 		window.show();
+		ObservableList<String> questions = FXCollections.observableArrayList(buildQuestions());
+		securityQuestion1.setItems(questions);
+		securityQuestion2.setItems(questions);
+		securityQuestion3.setItems(questions);
 	}
 	
 	public void loginBtnClicked(ActionEvent event) throws IOException {
@@ -74,6 +84,18 @@ public class LoginViewController{
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setScene(scene);
 		window.show();
+	}
+	private ArrayList<String> buildQuestions()
+	{
+		ArrayList<String> questions = new ArrayList<String>();
+		questions.add("What is your mother's maiden name?");
+		questions.add("What is the name of your first pet?");
+		questions.add("What is your high school mascot");
+		questions.add("What was the name of you elementary school?");
+		questions.add("What city does your nearest sibling live in?");
+		questions.add("What is your favorite superhero?");
+		questions.add("What town was your father born in?");
+		return questions;
 	}
 
 }
