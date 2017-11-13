@@ -28,55 +28,66 @@ public class LoginViewController{
 	private Connection connection;
 	private ResultSet resultSet;
 	
-	public void loginBtnClicked() throws SQLException {
+	public void loginBtnClicked(ActionEvent event) throws SQLException, IOException {
+		// Create SQL connection
 		connection = iLearnDBConfig.getConnection();
 		String usernameInput = userNameField.getText();
 		String passwordInput = passwordField.getText();
 		
-		if((usernameInput == null || usernameInput.isEmpty()) ||
-			(passwordInput == null || passwordInput.isEmpty())) {
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Input fields empty");
-			alert.setContentText("Please fill usname and password fields");
-			alert.showAndWait();
+		// Check if username and password are filled
+		if(usernameInput.isEmpty() || passwordInput.isEmpty()) {
+			alert("Input fileds empty", "Please fill usname and password fields");
 		}
 		else {
 			try {
-				// try type username with "chwong4703" in userName textField
-				String sql_query = "SELECT * FROM USERS WHERE Username = '" + usernameInput + "'"; 
-				// create the java statement
+				// try type username with "chwong4703" in userName textField and password "123456789"
+				String sql_query = "SELECT Password FROM users WHERE Username = '" + usernameInput + "'"; 
+				// create the sql statement
 				Statement st = connection.createStatement();
 			    // execute the query, and get a java resultset
 			    ResultSet rs = st.executeQuery(sql_query);
-			    // iterate through the java resultset
+			    // Get the password with username
+			    // If the username is not existed in the database, it will be handled by catch statement
 			    rs.first();
 			    String password = rs.getString("Password");
+			    if(password == "")
+			    	System.out.println("hahaha");
+			    // Jump to mainview if the username and the password are correct and match the vaule in db
 			    if(passwordInput.equals(password)) {
-			    	
+					Parent view = FXMLLoader.load(getClass().getResource("../view/MainView.fxml"));
+					Scene scene = new Scene(view);
+					Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+					window.setScene(scene);
+					window.show();
+			    }else{
+			    	// if the password is not correct, pops up an error message 
+			    	alert("Incorrect password", "Password is not correct!");
 			    }
 			    st.close();
 		    }catch(Exception e){
-			      System.err.println("Got an exception! ");
-			      System.err.println(e.getMessage());
+		    	// unknown user exception
+		    	alert("Unknown user", "Username is not existed in the database!");
+				System.out.println("Got an exception!");
+				System.err.println(e.getMessage());
 			}
 		}
 	}
-
+	
+	// initialization of alert msg
+	public void alert(String alertTile, String alertText) {
+		Alert alert = new Alert(AlertType.ERROR);
+		alert.setTitle(alertTile);
+		alert.setContentText(alertText);
+		alert.showAndWait();
+	}
+	
+	// jump to signupview
 	public void signUpBtnClicked(ActionEvent event) throws IOException {
-//		Parent view = FXMLLoader.load(getClass().getResource("../view/signUpView.fxml"));
 		Parent view = FXMLLoader.load(getClass().getResource("../view/SignUpView.fxml"));
 		Scene scene = new Scene(view);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setScene(scene);
 		window.show();
 	}
-	
-	public void loginBtnClicked(ActionEvent event) throws IOException {
-		Parent view = FXMLLoader.load(getClass().getResource(""));
-		Scene scene = new Scene(view);
-		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		window.setScene(scene);
-		window.show();
-	}
-
 }
+

@@ -6,19 +6,12 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iLearnSA.controller.SignUpController">
+<AnchorPane style="-fx-background-image: url('com/iLearn/images/backgroundImage.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iLearnSA.controller.SignUpViewController">
    <children>
       <AnchorPane layoutX="700.0" layoutY="400.0" prefHeight="200.0" prefWidth="200.0" />
-      <ImageView fitHeight="637.0" fitWidth="1029.0" layoutX="-106.0" layoutY="-16.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@iLearn_images/background%20image.jpg" />
-         </image>
-      </ImageView>
       <TextField fx:id="create_username" layoutX="70.0" layoutY="172.0" prefHeight="29.0" prefWidth="260.0" promptText="Username" />
       <Label layoutX="14.0" layoutY="26.0" prefHeight="116.0" prefWidth="581.0" text="iLearn User Creation" textFill="#f8f7f7">
          <font>
@@ -61,7 +54,7 @@
          </font>
       </Label>
       <Button fx:id="signUp" layoutX="418.0" layoutY="535.0" mnemonicParsing="false" onAction="#ClickSignUp_Button" text="Sign Up" />
-      <ComboBox fx:id="securityQuestion1" layoutX="604.0" layoutY="84.0" prefWidth="150.0">
+      <ComboBox fx:id="securityQuestion1" layoutX="537.0" layoutY="84.0" prefHeight="31.0" prefWidth="286.0">
       <items>
        		<FXCollections fx:factory="observableArrayList">
       			<String fx:value="What is your mother's maiden name?" />
@@ -74,7 +67,7 @@
        		</FXCollections>
     	</items>
     	</ComboBox>
-      <ComboBox fx:id="securityQuestion2" layoutX="604.0" layoutY="249.0" prefWidth="150.0">
+      <ComboBox fx:id="securityQuestion2" layoutX="535.0" layoutY="249.0" prefHeight="31.0" prefWidth="286.0">
       <items>
        		<FXCollections fx:factory="observableArrayList">
       			<String fx:value="What is your mother's maiden name?" />
@@ -87,7 +80,7 @@
        		</FXCollections>
     	</items>
     	</ComboBox>
-      <ComboBox fx:id="securityQuestion3" layoutX="604.0" layoutY="400.0" prefWidth="150.0">
+      <ComboBox fx:id="securityQuestion3" layoutX="535.0" layoutY="391.0" prefHeight="31.0" prefWidth="286.0">
       <items>
        		<FXCollections fx:factory="observableArrayList">
       			<String fx:value="What is your mother's maiden name?" />
