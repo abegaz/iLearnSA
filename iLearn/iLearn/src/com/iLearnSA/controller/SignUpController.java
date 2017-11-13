@@ -79,14 +79,14 @@ public class SignUpController
 		//As well as run another validation to make sure the userName
 		//is not taken as well as email
 		//might need insert instead of update i forgot which one
-		String query = "INSERT INTO users (userName, password, email) VALUES (" + userName + ", " + passWord + ", " + email + ")";//"userName = ?, passWord = ?, firstName = ?, lastName = ?, email = ?";
+		String query = "INSERT INTO users (userName, password, email) VALUES (" + "'" + userName + "', '" + passWord + "', '" + email + "')";//"userName = ?, passWord = ?, firstName = ?, lastName = ?, email = ?";
 		
 		//We then can set up a DB connection using Chris's connection object
 		Connection connection = iLearnDBConfig.getConnection();
 		//Create a statement
 		Statement st = connection.createStatement();
 		//Then run the query we set up above
-		st.executeQuery(query);
+		st.executeUpdate(query);
 		
 		//I need to ask chris what kind of object gets created
 		//When updating or inserting
