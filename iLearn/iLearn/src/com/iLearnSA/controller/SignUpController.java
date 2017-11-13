@@ -22,6 +22,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 public class SignUpController 
 {
@@ -33,9 +34,10 @@ public class SignUpController
 	//Setup all FXML content here that will be used in the controller
 	@FXML private TextField create_username, create_password, create_email;
 	@FXML private Button signUp;
-	@FXML private ChoiceBox<String> securityQuestion1;
-	@FXML private ChoiceBox<String> securityQuestion2;
-	@FXML private ChoiceBox<String> securityQuestion3;
+	@FXML private ComboBox<String> securityQuestion1;
+	@FXML private ComboBox<String> securityQuestion2;
+	@FXML private ComboBox<String> securityQuestion3;
+	@FXML private TextField qAnswer1, qAnswer2, qAnswer3;
 	//Those were just some examples
 	
 	//After we get those set up, we have to use methods to interact
@@ -44,12 +46,18 @@ public class SignUpController
 	//The main one we will be looking at would look something like this
 	public void ClickSignUp_Button(ActionEvent event) throws SQLException, IOException {
 		System.out.println("Signing Up");
-		String userName, passWord, firstName, lastName, email, sq1, sq2, sq3;
+		String userName, passWord, firstName, lastName, email, question1, question2, question3, answer1, answer2, answer3;
 		userName = create_username.getText();
 		passWord = create_password.getText();
 		//firstName = firstName_textField.getText();
 		//lastName = lastName_textField.getText();
 		email = create_email.getText();
+		question1 = securityQuestion1.getValue();
+		question2 = securityQuestion1.getValue();
+		question3 = securityQuestion1.getValue();
+		answer1 = qAnswer1.getText();
+		answer2 = qAnswer2.getText();
+		answer3 = qAnswer3.getText();
 
 		//This is where we will make all of our validations
 		//If it fails even one, we print out an exception object
@@ -99,18 +107,5 @@ public class SignUpController
 		window.setScene(scene);
 		window.show();
 	}
-	private ObservableList<String> buildQuestions()
-	{
-		ArrayList<String> questions = new ArrayList<String>();
-		questions.add("What is your mother's maiden name?");
-		questions.add("What is the name of your first pet?");
-		questions.add("What is your high school mascot");
-		questions.add("What was the name of you elementary school?");
-		questions.add("What city does your nearest sibling live in?");
-		questions.add("What is your favorite superhero?");
-		questions.add("What town was your father born in?");
-		return FXCollections.observableArrayList(questions);
-	}
-	
 	
 }
