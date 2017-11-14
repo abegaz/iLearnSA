@@ -55,7 +55,7 @@ public class SignUpViewController
 		answer3 = qAnswer3.getText();
 		
 		if(userName.isEmpty() || passWord.isEmpty() || email.isEmpty()) {
-			alert("Input fileds empty", "Please fill usname and password fields");
+			alert("Input fileds empty", "Please fill usname, password and email fields");
 		}
 		else {
 			//After all the validations go through, It will sign them up
@@ -87,6 +87,12 @@ public class SignUpViewController
 				String query = "INSERT INTO users (userName, password, email) VALUES (" + "'" + userName + "', '" + passWord + "', '" + email + "')";//"userName = ?, passWord = ?, firstName = ?, lastName = ?, email = ?";
 				st.executeUpdate(query);
 				
+				// tell the user if the account is created 
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("User creation");
+				alert.setContentText("Account is created!");
+				alert.showAndWait();
+
 				Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
 				Scene scene = new Scene(view);
 				Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -105,5 +111,14 @@ public class SignUpViewController
 		alert.setTitle(alertTile);
 		alert.setContentText(alertText);
 		alert.showAndWait();
+	}
+	
+	// go back to login view
+	public void goBackBtnClicked(ActionEvent event) throws IOException {
+		Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
+		Scene scene = new Scene(view);
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setScene(scene);
+		window.show();
 	}
 }
