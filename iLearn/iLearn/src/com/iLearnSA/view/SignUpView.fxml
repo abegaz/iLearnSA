@@ -11,7 +11,10 @@
 
 <AnchorPane style="-fx-background-image: url('com/iLearn/images/backgroundImage.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iLearnSA.controller.SignUpViewController">
    <children>
-      <AnchorPane layoutX="700.0" layoutY="400.0" prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane layoutX="700.0" layoutY="400.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="goBackBtn" layoutX="35.0" layoutY="141.0" mnemonicParsing="false" onAction="#goBackBtnClicked" text="Back" />
+         </children></AnchorPane>
       <TextField fx:id="create_username" layoutX="70.0" layoutY="172.0" prefHeight="29.0" prefWidth="260.0" promptText="Username" />
       <Label layoutX="14.0" layoutY="26.0" prefHeight="116.0" prefWidth="581.0" text="iLearn User Creation" textFill="#f8f7f7">
          <font>
