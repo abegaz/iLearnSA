@@ -36,7 +36,7 @@ public class LoginViewController{
 		
 		// Check if username and password are filled
 		if(usernameInput.isEmpty() || passwordInput.isEmpty()) {
-			alert("Input fileds empty", "Please fill usname and password fields");
+			alert("Input fileds empty", "Please fill in username and password fields");
 		}
 		else {
 			try {

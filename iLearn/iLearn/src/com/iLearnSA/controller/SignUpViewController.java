@@ -31,6 +31,7 @@ public class SignUpViewController
 	//Instantiate private main class
 	//add here
 	
+	
 	//Setup all FXML content here that will be used in the controller
 	@FXML private TextField create_username, create_password, create_email;
 	@FXML private Button signUp;
@@ -38,6 +39,7 @@ public class SignUpViewController
 	@FXML private ComboBox<String> securityQuestion2;
 	@FXML private ComboBox<String> securityQuestion3;
 	@FXML private TextField qAnswer1, qAnswer2, qAnswer3;
+	
 	
 	//The main one we will be looking at would look something like this
 	public void ClickSignUp_Button(ActionEvent event) throws SQLException, IOException {
@@ -52,10 +54,11 @@ public class SignUpViewController
 		question3 = securityQuestion1.getValue();
 		answer1 = qAnswer1.getText();
 		answer2 = qAnswer2.getText();
-		answer3 = qAnswer3.getText();
+		answer3 = qAnswer3.getText();	
 		
-		if(userName.isEmpty() || passWord.isEmpty() || email.isEmpty()) {
-			alert("Input fileds empty", "Please fill usname, password and email fields");
+		if(userName.isEmpty() || passWord.isEmpty() || email.isEmpty())
+		{
+			alert("Input fileds are empty empty", "Please fill username, password, and email fields");
 		}
 		else {
 			//After all the validations go through, It will sign them up
@@ -67,12 +70,12 @@ public class SignUpViewController
 			//We then use the model to set the values for the User object
 			user.setUserName(userName);
 			user.setPassWord(passWord);
-			user.setEmail(email);
+			user.setEmail(email);		
 			
 			//We then can set up a DB connection using Chris's connection object
 			Connection connection = iLearnDBConfig.getConnection();
 			//Create a statement
-			Statement st = connection.createStatement();
+			Statement st = connection.createStatement();			
 			
 			// check if username has been user by other people 
 			String checkUserName = "SELECT COUNT(1) AS COUNT FROM users WHERE userName = '" + userName + "'";
@@ -87,12 +90,6 @@ public class SignUpViewController
 				String query = "INSERT INTO users (userName, password, email) VALUES (" + "'" + userName + "', '" + passWord + "', '" + email + "')";//"userName = ?, passWord = ?, firstName = ?, lastName = ?, email = ?";
 				st.executeUpdate(query);
 				
-				// tell the user if the account is created 
-				Alert alert = new Alert(AlertType.INFORMATION);
-				alert.setTitle("User creation");
-				alert.setContentText("Account is created!");
-				alert.showAndWait();
-
 				Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
 				Scene scene = new Scene(view);
 				Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -104,21 +101,18 @@ public class SignUpViewController
 			}
 		}
 	}
-	
+	public void BackToHome(ActionEvent event) throws IOException{
+		Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
+		Scene scene = new Scene(view);
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setScene(scene);
+		window.show();
+	}
 	// initialization of alert msg
 	public void alert(String alertTile, String alertText) {
 		Alert alert = new Alert(AlertType.ERROR);
 		alert.setTitle(alertTile);
 		alert.setContentText(alertText);
 		alert.showAndWait();
-	}
-	
-	// go back to login view
-	public void goBackBtnClicked(ActionEvent event) throws IOException {
-		Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
-		Scene scene = new Scene(view);
-		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		window.setScene(scene);
-		window.show();
 	}
 }
