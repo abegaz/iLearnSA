@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import application.iLearnDBConfig;
 import application.iLearn_User;
@@ -40,18 +41,53 @@ public class SignUpViewController
 	@FXML private ComboBox<String> securityQuestion3;
 	@FXML private TextField qAnswer1, qAnswer2, qAnswer3;
 	
-	
+	public void initialize() throws SQLException {
+		//We then can set up a DB connection using Chris's connection object
+				Connection connection = iLearnDBConfig.getConnection();
+				//Create a statement
+				Statement st = connection.createStatement();	
+				
+				ResultSet resultSet = st.executeQuery("SELECT * FROM security_questions");		
+				List<String> list = new ArrayList<String>();
+				//adds the database values to a list
+			    while (resultSet.next()) {
+			      String questions = resultSet.getString("security_question");
+			      int id = resultSet.getInt("qId");
+			    //  System.out.println(id);
+			      Object[] itemData = new Object[] {id, questions};
+			      list.add(id +")  " + questions);
+			    }
+			  //  System.out.println(list.toString());
+			    //Observable list will detect changes within the list
+			    ObservableList obList = FXCollections.observableList(list);
+			    //add database value to securityQuestion1
+			    if(securityQuestion1 != null)
+			    {
+			    	securityQuestion1.getItems().clear();
+			    	securityQuestion1.setItems(obList);
+			    }
+			  //add database value to securityQuestion2
+			    if(securityQuestion2 != null)
+			    {
+			    	securityQuestion2.getItems().clear();
+			    	securityQuestion2.setItems(obList);
+			    }
+			  //add database value to securityQuestion3
+			    if(securityQuestion3 != null)
+			    {
+			    	securityQuestion3.getItems().clear();
+			    	securityQuestion3.setItems(obList);
+			    }
+	}
 	//The main one we will be looking at would look something like this
 	public void ClickSignUp_Button(ActionEvent event) throws SQLException, IOException {
 		String userName, passWord, firstName, lastName, email, question1, question2, question3, answer1, answer2, answer3;
 		userName = create_username.getText();
 		passWord = create_password.getText();
-		//firstName = firstName_textField.getText();
-		//lastName = lastName_textField.getText();
 		email = create_email.getText();
 		question1 = securityQuestion1.getValue();
-		question2 = securityQuestion1.getValue();
-		question3 = securityQuestion1.getValue();
+		question2 = securityQuestion2.getValue();
+		question3 = securityQuestion3.getValue();
 		answer1 = qAnswer1.getText();
 		answer2 = qAnswer2.getText();
 		answer3 = qAnswer3.getText();	
@@ -60,10 +96,13 @@ public class SignUpViewController
 		{
 			alert("Input fileds are empty empty", "Please fill username, password, and email fields");
 		}
+		if(answer1.isEmpty() || answer2.isEmpty() || answer3.isEmpty())
+		{
+			alert("Input fileds are empty empty", "Please fill in all security question answer fields.");
+		}
 		else {
 			//After all the validations go through, It will sign them up
-			//And send them back to the login page where they can log in
-			
+			//And send them back to the login page where they can log in			
 			//We will then create a User object
 			iLearn_User user = new iLearn_User();
 			
@@ -90,6 +129,25 @@ public class SignUpViewController
 				String query = "INSERT INTO users (userName, password, email) VALUES (" + "'" + userName + "', '" + passWord + "', '" + email + "')";//"userName = ?, passWord = ?, firstName = ?, lastName = ?, email = ?";
 				st.executeUpdate(query);
 				
+				
+				String getUserId = "SELECT uersID FROM users WHERE userName = '" + userName + "'";
+				rs = st.executeQuery(getUserId);
+				String UserId = "";
+				while(rs.next())
+					UserId = rs.getString("uersID");
+				
+				//insert the first userId, questionID, and answer to answers
+				String query2 ="INSERT INTO answers(userId, qId, answerCol) VALUES (" + "'" + UserId + "', '" + question1.substring(0,1) + "', '" + answer1 + "')";
+				st.executeUpdate(query2);
+				//insert the second userId, questionID, and answer to answers
+				String query3 ="INSERT INTO answers(userId, qId, answerCol) VALUES (" + "'" + UserId + "', '" + question2.substring(0,1) + "', '" + answer2 + "')";
+				st.executeUpdate(query3);
+				//insert the third userId, questionID, and answer to answers
+				String query4 ="INSERT INTO answers(userId, qId, answerCol) VALUES (" + "'" + UserId + "', '" + question3.substring(0,1) + "', '" + answer3 + "')";
+				st.executeUpdate(query4);
+				
+				
+				
 				Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
 				Scene scene = new Scene(view);
 				Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -101,6 +159,7 @@ public class SignUpViewController
 			}
 		}
 	}
+	//jump back to the homepage
 	public void BackToHome(ActionEvent event) throws IOException{
 		Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
 		Scene scene = new Scene(view);

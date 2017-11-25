@@ -1,10 +1,12 @@
 package com.iLearnSA.controller;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 import application.iLearnDBConfig;
 import javafx.collections.FXCollections;
@@ -12,19 +14,21 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-public class LoginViewController{
+public class LoginViewController {
 	@FXML private TextField userNameField;
 	@FXML private TextField passwordField;
+	@FXML private ComboBox<String> securityQuestion1;
+	@FXML private ComboBox<String> securityQuestion2;
+	@FXML private ComboBox<String> securityQuestion3;
 	private Connection connection;
 	private ResultSet resultSet;
 	
@@ -82,12 +86,15 @@ public class LoginViewController{
 	}
 	
 	// jump to signupview
-	public void signUpBtnClicked(ActionEvent event) throws IOException {
-		Parent view = FXMLLoader.load(getClass().getResource("../view/SignUpView.fxml"));
+	public void signUpBtnClicked(ActionEvent event) throws IOException, SQLException {
+		    
+	  //load the next page
+	    Parent view = FXMLLoader.load(getClass().getResource("../view/SignUpView.fxml"));
 		Scene scene = new Scene(view);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setScene(scene);
 		window.show();
 	}
+	
 }
 
