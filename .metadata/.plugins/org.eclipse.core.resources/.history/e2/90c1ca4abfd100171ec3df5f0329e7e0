@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane style="-fx-background-image: url('com/iLearn/images/backgroundImage.jpg');" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iLearnSA.controller.SignUpViewController">
+   <children>
+      <AnchorPane layoutX="700.0" layoutY="400.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="create_username" layoutX="70.0" layoutY="172.0" prefHeight="29.0" prefWidth="260.0" promptText="Username" />
+      <Label layoutX="14.0" layoutY="26.0" prefHeight="116.0" prefWidth="581.0" text="iLearn User Creation" textFill="#f8f7f7">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="142.0" prefHeight="27.0" prefWidth="159.0" text="Username:" textFill="#f8f6f6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="create_password" layoutX="70.0" layoutY="301.0" prefHeight="29.0" prefWidth="260.0" promptText="Password" />
+      <TextField fx:id="create_email" layoutX="70.0" layoutY="462.0" prefHeight="29.0" prefWidth="260.0" promptText="John123@sample.com" />
+      <Label layoutX="70.0" layoutY="274.0" prefHeight="27.0" prefWidth="159.0" text="Password:" textFill="#f8f6f6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="435.0" prefHeight="27.0" prefWidth="159.0" text="Email:" textFill="#f8f6f6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="qAnswer1" layoutX="536.0" layoutY="158.0" prefHeight="29.0" prefWidth="286.0" promptText="Security Question1" />
+      <TextField fx:id="qAnswer3" layoutX="521.0" layoutY="462.0" prefHeight="29.0" prefWidth="286.0" promptText="Security Question3" />
+      <TextField fx:id="qAnswer2" layoutX="536.0" layoutY="311.0" prefHeight="29.0" prefWidth="286.0" promptText="Security Question2" />
+      <Label layoutX="512.0" layoutY="129.0" prefHeight="27.0" prefWidth="303.0" text="Security Question Answer:" textFill="#f8f6f6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="512.0" layoutY="274.0" prefHeight="27.0" prefWidth="260.0" text="Security Question Answer 2:" textFill="#f8f6f6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="505.0" layoutY="422.0" prefHeight="27.0" prefWidth="275.0" text="Security Question Answer 3:" textFill="#f8f6f6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="signUp" layoutX="418.0" layoutY="535.0" mnemonicParsing="false" onAction="#ClickSignUp_Button" text="Sign Up" />
+      <ComboBox fx:id="securityQuestion1" layoutX="537.0" layoutY="84.0" prefHeight="31.0" prefWidth="286.0">
+      <items>
+       		<FXCollections fx:factory="observableArrayList">
+      			<String fx:value="What is your mother's maiden name?" />
+				<String fx:value="What is the name of your first pet?" />
+				<String fx:value="What is your high school mascot" />
+				<String fx:value="What was the name of you elementary school?" />
+				<String fx:value="What city does your nearest sibling live in?" />
+				<String fx:value="What is your favorite superhero?" />
+				<String fx:value="What town was your father born in?" />
+       		</FXCollections>
+    	</items>
+    	</ComboBox>
+      <ComboBox fx:id="securityQuestion2" layoutX="535.0" layoutY="249.0" prefHeight="31.0" prefWidth="286.0">
+      <items>
+       		<FXCollections fx:factory="observableArrayList">
+       		</FXCollections>
+    	</items>
+    	</ComboBox>
+      <ComboBox fx:id="securityQuestion3" layoutX="535.0" layoutY="391.0" prefHeight="31.0" prefWidth="286.0">
+      <items>
+       		<FXCollections fx:factory="observableArrayList">
+       		</FXCollections>
+    	</items>
+    	</ComboBox>
+      <Button fx:id="Backbtn" layoutX="345.0" layoutY="535.0" mnemonicParsing="false" onAction="#BackToHome" prefHeight="25.0" prefWidth="58.0" text="Back" />
+   </children>
+</AnchorPane>
