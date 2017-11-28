@@ -96,5 +96,13 @@ public class LoginViewController {
 		window.show();
 	}
 	
+	public void forgotBtnClicked(ActionEvent event) throws IOException, SQLException {
+		Parent view = FXMLLoader.load(getClass().getResource("../view/PasswordRecoveryView.fxml"));
+		Scene scene = new Scene(view);
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setScene(scene);
+		window.show(); 
+	}
+	
 }
 

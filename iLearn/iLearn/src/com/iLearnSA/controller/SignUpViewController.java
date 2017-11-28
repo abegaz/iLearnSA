@@ -130,11 +130,11 @@ public class SignUpViewController
 				st.executeUpdate(query);
 				
 				
-				String getUserId = "SELECT uersID FROM users WHERE userName = '" + userName + "'";
+				String getUserId = "SELECT userID FROM users WHERE userName = '" + userName + "'";
 				rs = st.executeQuery(getUserId);
 				String UserId = "";
 				while(rs.next())
-					UserId = rs.getString("uersID");
+					UserId = rs.getString("userID");
 				
 				//insert the first userId, questionID, and answer to answers
 				String query2 ="INSERT INTO answers(userId, qId, answerCol) VALUES (" + "'" + UserId + "', '" + question1.substring(0,1) + "', '" + answer1 + "')";
