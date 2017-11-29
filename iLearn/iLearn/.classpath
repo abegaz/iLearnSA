@@ -3,6 +3,10 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/chris/Downloads/iLearnSA-master/bin/mysql-connector-java-5.1.44-bin.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/emil/Documents/GitHub/iLearnSA/iLearn/iLearn/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44/mysql-connector-java-5.1.44-bin.jar"/>
+>>>>>>> 5e15e1c8ef501896539fd6fd94a929b252885706
 	<classpathentry kind="output" path="bin"/>
 </classpath>

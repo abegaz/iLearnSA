@@ -20,7 +20,7 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Hyperlink fx:id="forgotPWBtn" layoutX="111.0" layoutY="262.0" text="Forgot Password?" textFill="#fffdfd" />
+            <Hyperlink fx:id="forgotPWBtn" layoutX="111.0" layoutY="262.0" text="Forgot Password?" textFill="#fffdfd" onAction="#forgotBtnClicked" />
          </children>
       </AnchorPane>
       <Label layoutX="57.0" layoutY="126.0" prefHeight="62.0" prefWidth="328.0" text="Welcome to iLearn" textFill="#fcfcfc">
