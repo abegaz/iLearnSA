@@ -1,0 +1,21 @@
+public void openChapterPDF(ActionEvent event) throws PDFException{
+    Parent root;
+    try {
+      PDFViewer m_PDFViewer;
+    m_PDFViewer = new PDFViewer();
+    File file = new File("Chapter.pdf"); //set your location path 
+    String path = file.getAbsolutePath();
+    path.replaceAll("\\\\", "/");
+    m_PDFViewer.loadPDF(path);
+    BorderPane borderPane = new BorderPane(m_PDFViewer);
+    Scene scene = new Scene(borderPane);
+      Stage stage = new Stage();
+    stage.setTitle("JavaFX PDFViewer - Qoppa Software");
+    stage.setScene(scene);
+    stage.centerOnScreen();
+    stage.show();
+    }catch (PDFException e) {
+  // TODO Auto-generated catch block
+  e.printStackTrace();
+}
+}
