@@ -58,7 +58,7 @@ public class LoginViewController {
 			    	System.out.println("hahaha");
 			    // Jump to mainview if the username and the password are correct and match the vaule in db
 			    if(passwordInput.equals(password)) {
-					Parent view = FXMLLoader.load(getClass().getResource("../view/MainView.fxml"));
+					Parent view = FXMLLoader.load(getClass().getResource("../view/MainPage.fxml"));
 					Scene scene = new Scene(view);
 					Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 					window.setScene(scene);
