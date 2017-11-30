@@ -88,20 +88,21 @@ public class SignUpViewController
 		confirmpassWord = confirm_password.getText();
 		email = create_email.getText();
 		question1 = securityQuestion1.getValue();
+
 		question2 = securityQuestion2.getValue();
 		question3 = securityQuestion3.getValue();
 		answer1 = qAnswer1.getText();
 		answer2 = qAnswer2.getText();
 		answer3 = qAnswer3.getText();	
 		
-		if(userName.isEmpty() || passWord.isEmpty() || email.isEmpty()){
-			alert("Input fileds are empty empty", "Please fill username, password, and email fields");
+		if(userName.isEmpty() || passWord.isEmpty() || email.isEmpty() || answer1.isEmpty() || answer2.isEmpty() || answer3.isEmpty()){
+			alert("Input fileds are empty", "Please fill all text fields");
 		}else if (!passWord.equals(confirmpassWord)) {
 			alert("Passwords are not match", "Please enter two same passwords");
+		}else if(question1 == null || question2 == null || question3 == null){
+				alert("Security question", "Please select security questions");
 		}else if (question1 == question2 || question2 == question3 || question1 == question3) {
 			alert("Selected repeated security questions", "Please select three different security questions!");
-		}else if(answer1.isEmpty() || answer2.isEmpty() || answer3.isEmpty()){
-			alert("Input fileds are empty empty", "Please fill in all security question answer fields.");
 		}else {
 			//After all the validations go through, It will sign them up
 			//And send them back to the login page where they can log in			
@@ -167,8 +168,9 @@ public class SignUpViewController
 	//jump back to the homepage
 	public void BackToHome(ActionEvent event) throws IOException{
 		Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
-		Scene scene = new Scene(view);
+		Scene scene = new Scene(view, 800, 600);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setTitle("Login Page");
 		window.setScene(scene);
 		window.show();
 	}

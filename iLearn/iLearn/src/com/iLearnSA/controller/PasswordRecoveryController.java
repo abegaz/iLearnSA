@@ -104,7 +104,7 @@ public class PasswordRecoveryController
 	public void clickBackBtn(ActionEvent event) throws IOException
 	{
 		Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
-		Scene scene = new Scene(view);
+		Scene scene = new Scene(view, 800, 600);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 		window.setTitle("Login Page");
 		window.setScene(scene);

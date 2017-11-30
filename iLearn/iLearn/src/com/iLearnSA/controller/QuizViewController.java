@@ -45,10 +45,10 @@ main=mainIn;
     //questions in a multi-dimensional array
     public static String[][] questions = {
 	    {"Which is the correct way to print?","Print()","System.Print()","System.out.print()","System,out,print()","System.out.print()"},
-	    {"What color is best?","red","blue","green","yellow","red"},
+	    {"Java is an _____________ language","Object","Subject","Magic","Logic","Object"},
 	    {"A Java program is best classified as", "input","storage","processor","hardware","software"},
-	    {"6 bits can be used to represent ________ ", "6","64","20","32","64"},
-	    {"How many hands do people have?","1","two","3","four","two"}
+	    {"All Java statements must end with a:___ ", "#",";","!",",",";"},
+	    {"The memory or primary storage of a computer is called?","ROM","floppy disk","RAM","hard drive","RAM"}
     };
 
     //make a ToggleGroup

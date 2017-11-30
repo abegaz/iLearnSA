@@ -9,9 +9,12 @@ import com.qoppa.pdfViewerFX.PDFViewer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -62,5 +65,19 @@ public class MainPageController {
 		stage.setTitle("Test your understanding! ");
 		stage.setScene(new Scene(root, 800, 800));
 		stage.show();
+	}
+	
+	public void logoutBtnClicked(ActionEvent event) throws IOException {
+		Alert alert = new Alert(AlertType.INFORMATION);
+		alert.setTitle("Log out");
+		alert.setContentText("See you!");
+		alert.showAndWait();
+		
+	    Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
+		Scene scene = new Scene(view, 800, 600);
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setTitle("Sign Up!");
+		window.setScene(scene);
+		window.show();
 	}
 }
