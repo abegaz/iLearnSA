@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -22,13 +23,19 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="create_password" layoutX="70.0" layoutY="301.0" prefHeight="29.0" prefWidth="260.0" promptText="Password" />
       <TextField fx:id="create_email" layoutX="70.0" layoutY="462.0" prefHeight="29.0" prefWidth="260.0" promptText="John123@sample.com" />
-      <Label layoutX="70.0" layoutY="274.0" prefHeight="27.0" prefWidth="159.0" text="Password:" textFill="#f8f6f6">
+      <Label layoutX="70.0" layoutY="247.0" prefHeight="27.0" prefWidth="159.0" text="Password:" textFill="#f8f6f6">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <PasswordField fx:id="create_password" layoutX="70.0" layoutY="272.0" prefHeight="31.0" prefWidth="260.0" />
+      <Label layoutX="70.0" layoutY="352.0" prefHeight="27.0" prefWidth="159.0" text="Confirm Password:" textFill="#f8f6f6">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="confirm_password" layoutX="70.0" layoutY="379.0" prefHeight="31.0" prefWidth="260.0" />
       <Label layoutX="70.0" layoutY="435.0" prefHeight="27.0" prefWidth="159.0" text="Email:" textFill="#f8f6f6">
          <font>
             <Font size="18.0" />

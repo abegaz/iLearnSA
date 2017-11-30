@@ -106,6 +106,7 @@ public class PasswordRecoveryController
 		Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
 		Scene scene = new Scene(view);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setTitle("Login Page");
 		window.setScene(scene);
 		window.show();
 	}

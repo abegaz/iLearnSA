@@ -73,9 +73,9 @@ public class PractiseViewController{
         String text = "----- Your output: -----\n" + lpsOut.buf.toString();
         String errorMsg = lpsErr.buf.toString();
 
-        if(errorMsg.length() > 0){
+        if(errorMsg.length() > 0)
         	codeOutput.setText(errorMsg);
-        }else
+        else
         	codeOutput.setText(text);
     }
 }

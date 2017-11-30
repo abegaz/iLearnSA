@@ -34,7 +34,8 @@ public class SignUpViewController
 	
 	
 	//Setup all FXML content here that will be used in the controller
-	@FXML private TextField create_username, create_password, create_email;
+	@FXML private TextField create_username, create_email;
+	@FXML private PasswordField create_password, confirm_password;
 	@FXML private Button signUp;
 	@FXML private ComboBox<String> securityQuestion1;
 	@FXML private ComboBox<String> securityQuestion2;
@@ -81,9 +82,10 @@ public class SignUpViewController
 	}
 	//The main one we will be looking at would look something like this
 	public void ClickSignUp_Button(ActionEvent event) throws SQLException, IOException {
-		String userName, passWord, firstName, lastName, email, question1, question2, question3, answer1, answer2, answer3;
+		String userName, passWord, confirmpassWord, firstName, lastName, email, question1, question2, question3, answer1, answer2, answer3;
 		userName = create_username.getText();
 		passWord = create_password.getText();
+		confirmpassWord = confirm_password.getText();
 		email = create_email.getText();
 		question1 = securityQuestion1.getValue();
 		question2 = securityQuestion2.getValue();
@@ -92,15 +94,15 @@ public class SignUpViewController
 		answer2 = qAnswer2.getText();
 		answer3 = qAnswer3.getText();	
 		
-		if(userName.isEmpty() || passWord.isEmpty() || email.isEmpty())
-		{
+		if(userName.isEmpty() || passWord.isEmpty() || email.isEmpty()){
 			alert("Input fileds are empty empty", "Please fill username, password, and email fields");
-		}
-		if(answer1.isEmpty() || answer2.isEmpty() || answer3.isEmpty())
-		{
+		}else if (!passWord.equals(confirmpassWord)) {
+			alert("Passwords are not match", "Please enter two same passwords");
+		}else if (question1 == question2 || question2 == question3 || question1 == question3) {
+			alert("Selected repeated security questions", "Please select three different security questions!");
+		}else if(answer1.isEmpty() || answer2.isEmpty() || answer3.isEmpty()){
 			alert("Input fileds are empty empty", "Please fill in all security question answer fields.");
-		}
-		else {
+		}else {
 			//After all the validations go through, It will sign them up
 			//And send them back to the login page where they can log in			
 			//We will then create a User object
@@ -146,7 +148,10 @@ public class SignUpViewController
 				String query4 ="INSERT INTO answers(userId, qId, answerCol) VALUES (" + "'" + UserId + "', '" + question3.substring(0,1) + "', '" + answer3 + "')";
 				st.executeUpdate(query4);
 				
-				
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Successful!");
+				alert.setContentText("Your account is created!");
+				alert.showAndWait();
 				
 				Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
 				Scene scene = new Scene(view);

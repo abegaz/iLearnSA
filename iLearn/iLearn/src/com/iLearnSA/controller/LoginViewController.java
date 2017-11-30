@@ -59,8 +59,9 @@ public class LoginViewController {
 			    // Jump to mainview if the username and the password are correct and match the vaule in db
 			    if(passwordInput.equals(password)) {
 					Parent view = FXMLLoader.load(getClass().getResource("../view/MainPage.fxml"));
-					Scene scene = new Scene(view);
+					Scene scene = new Scene(view, 800, 600);
 					Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+					window.setTitle("Main Page");
 					window.setScene(scene);
 					window.show();
 			    }else{
@@ -92,6 +93,7 @@ public class LoginViewController {
 	    Parent view = FXMLLoader.load(getClass().getResource("../view/SignUpView.fxml"));
 		Scene scene = new Scene(view);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setTitle("Sign Up!");
 		window.setScene(scene);
 		window.show();
 	}
@@ -100,9 +102,9 @@ public class LoginViewController {
 		Parent view = FXMLLoader.load(getClass().getResource("../view/PasswordRecoveryView.fxml"));
 		Scene scene = new Scene(view);
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setTitle("Forgot password");
 		window.setScene(scene);
 		window.show(); 
 	}
-	
 }
 
