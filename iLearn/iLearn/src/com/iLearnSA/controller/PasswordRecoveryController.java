@@ -92,6 +92,11 @@ public class PasswordRecoveryController
 		{
 		String newPassQuery = "UPDATE users SET password = '" + newPassword.getText() + "' WHERE uersId = '" + userId + "'";
 		st.executeUpdate(newPassQuery);
+		Parent view = FXMLLoader.load(getClass().getResource("../view/LoginView.fxml"));
+		Scene scene = new Scene(view);
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setScene(scene);
+		window.show();
 		}
 		else
 			alert("Security Question answers incorrect", "Please try again");
