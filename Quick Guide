@@ -1,0 +1,48 @@
+Quick Guide - iLearnSA
+
+Before you use the program 
+	Make sure you have all correct jar file
+		I put another jar file inside ChaptersPDF folder 
+	Download JDK 73 version 
+	Go to below website
+		http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html
+	download JDK 8u73
+
+1. Login Page 
+  3 validation implementations
+  1.1. Check if all textfields (username and password) are filled
+  1.2 Check if username exists in DB
+  1.3 Check if password is correct
+	Success:
+	1.4  Jump to Main Page
+  
+2. Signup Page
+	5 validation implementations
+	2.1 Check if all textfields (username and password) are filled
+	2.2 Check if password and confirm password are same
+	2.3 Check if user select security question from question set
+	2.4 Check if user select three different security question
+	2.5 Check if userName already been used by other one
+	Success:
+	2.6 Jump back to login page
+  
+3. Main Page
+	3 functions
+	3.1 Notes
+		3.1.1 Open differnet chapter notes
+	3.2 Tutorial
+		3.2.1 Allow user to type code and show the output
+		public class Test{
+			public static void main(String[] args){
+				System.out.println("Hello world");
+			}
+		}
+		3.2.2 If the code has any syntax error, the output will show which part gets wrong
+	3.3 Quiz
+		3.3.1 Do the quiz
+		3.3.2 Show the grade at the end
+}
+4. Forgot password
+	4.1 Fetch question based on two user inputs(Username, email)
+	4.2 Show the question on the right-hand side window
+	4.3 Enter new password and then Reset password
