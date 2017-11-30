@@ -98,6 +98,7 @@ main=mainIn;
 		    }else{
 		    	qLabel.setText("No more questions!");
 		    	grade();
+		    	qIndex = 0;
 		    }
 		
 		    }catch(Exception e){
